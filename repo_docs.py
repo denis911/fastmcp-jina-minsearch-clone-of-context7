@@ -1,6 +1,6 @@
 from fastmcp import FastMCP
 
-mcp = FastMCP("Repo_docs")
+mcp = FastMCP("Repo_docs", quiet=True)
 
 def _scrape_web_page_logic(url: str) -> str:
     import requests
