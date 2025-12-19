@@ -14,3 +14,6 @@ Please test it like that:
 -- Create a file `test.py` which invokes requests /  jina-based  function 
 to test that it works well.
 -- I will run it and check if it works.
+
+-- Integrate scrape_web_page MCP tool into antigravity tool box.
+   Update mcp_config.json to include the new server.
