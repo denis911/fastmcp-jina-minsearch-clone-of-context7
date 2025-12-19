@@ -21,26 +21,11 @@ def scrape_web_page(url: str) -> str:
     return _scrape_web_page_logic(url)
 
 if __name__ == "__main__":
+    # Ensure no binary mode issues on Windows without corrupting the stream
     if sys.platform == "win32":
         import msvcrt
-        import io
-        
-        # Set stdin and stdout to binary mode to prevent shell transitions
         msvcrt.setmode(sys.stdin.fileno(), os.O_BINARY)
         msvcrt.setmode(sys.stdout.fileno(), os.O_BINARY)
-        
-        # Wrap stdout to ensure UTF-8 encoding and LF newlines
-        sys.stdout = io.TextIOWrapper(
-            sys.stdout.buffer, 
-            encoding='utf-8', 
-            newline='\n', 
-            write_through=True
-        )
-        sys.stdin = io.TextIOWrapper(
-            sys.stdin.buffer, 
-            encoding='utf-8', 
-            newline='\n'
-        )
 
     mcp.run(show_banner=False)
 
