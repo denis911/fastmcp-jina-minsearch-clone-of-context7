@@ -1,4 +1,14 @@
+import sys
+
+# Redirect stdout to stderr BEFORE importing FastMCP
+# This prevents the banner from contaminating the MCP protocol stream
+_original_stdout = sys.stdout
+sys.stdout = sys.stderr
+
 from fastmcp import FastMCP
+
+# Restore stdout after import for MCP protocol communication
+sys.stdout = _original_stdout
 
 mcp = FastMCP("Repo_docs")
 
@@ -20,3 +30,5 @@ def scrape_web_page(url: str) -> str:
 
 if __name__ == "__main__":
     mcp.run()
+
+    
