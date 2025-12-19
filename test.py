@@ -14,5 +14,20 @@ def test_scrape():
     except Exception as e:
         print(f"Error scraping: {e}")
 
+
+
+def test_github_scrape():
+    url = "https://github.com/alexeygrigorev/minsearch"
+    print(f"\nTesting scraping for: {url}")
+    try:
+        content = scrape_web_page(url)
+        char_count = len(content)
+        print("Success!")
+        print(f"Character count: {char_count}")
+        print("-" * 20)
+    except Exception as e:
+        print(f"Error scraping: {e}")
+
 if __name__ == "__main__":
     test_scrape()
+    test_github_scrape()
