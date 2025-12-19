@@ -1,3 +1,5 @@
+import sys
+import os
 from fastmcp import FastMCP
 
 mcp = FastMCP("Repo_docs")
@@ -19,6 +21,9 @@ def scrape_web_page(url: str) -> str:
     return _scrape_web_page_logic(url)
 
 if __name__ == "__main__":
+    if sys.platform == "win32":
+        import msvcrt
+        msvcrt.setmode(sys.stdout.fileno(), os.O_BINARY)
     mcp.run(show_banner=False)
 
     
