@@ -1,0 +1,16 @@
+Scrape Web Tool.
+Please research the content of the current repo and use AGENTS.md for directions.
+Repo consists of MCP starter app and venv for uv environment - please use it.
+
+We need to create an MCP tool for downloading content of any web page.
+We'll use Jina reader for that.
+
+To get content of any page in markdown, you simply need to add r.jina.ai 
+in front of the address. For example: https://r.jina.ai/https://datatalks.club
+
+Please create an MCP tool based on this. You may use the requests library.
+
+Please test it like that:
+-- Create a file `test.py` which invokes requests /  jina-based  function 
+to test that it works well.
+-- I will run it and check if it works.
