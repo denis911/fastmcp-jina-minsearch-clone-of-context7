@@ -1,4 +1,4 @@
-from main import _scrape_web_page_logic as scrape_web_page
+from repo_docs import _scrape_web_page_logic as scrape_web_page
 
 def test_scrape():
     url = "https://datatalks.club" # Example from task description
