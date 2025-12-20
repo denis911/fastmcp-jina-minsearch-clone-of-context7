@@ -1,19 +1,49 @@
-Scrape Web Tool.
-Please research the content of the current repo and use AGENTS.md for directions.
-Repo consists of MCP starter app and venv for uv environment - please use it.
+TASK: Scrape Web Page MCP Tool
 
-We need to create an MCP tool for downloading content of any web page.
-We'll use Jina reader for that.
+OBJECTIVE
+Create a new MCP tool that downloads the content of any web page as Markdown.
 
-To get content of any page in markdown, you simply need to add r.jina.ai 
-in front of the address. For example: https://r.jina.ai/https://datatalks.club
+SCOPE
+- This task applies only to the current repository
+- The repository already contains:
+  - An MCP starter application
+  - A uv-based Python environment
+- No changes outside this repository are allowed
 
-Please create an MCP tool based on this. You may use the requests library.
+FUNCTIONAL REQUIREMENTS
+1. Implement an MCP tool named:
+   scrape_web_page
 
-Please test it like that:
--- Create a file `test.py` which invokes requests /  jina-based  function 
-to test that it works well.
--- I will run it and check if it works.
+2. Tool behavior:
+   - Input: a single URL (string)
+   - Output: Markdown content of the page
+   - Implementation method:
+     - Prepend `https://r.jina.ai/` to the input URL
+     - Fetch the content via HTTP
+   - Handle HTTP and network errors gracefully
 
--- Integrate scrape_web_page MCP tool into antigravity tool box.
-   Update mcp_config.json to include the new server.
+TESTING REQUIREMENTS
+1. Create a file named `test.py`
+2. `test.py` must:
+   - Call the underlying scraping function directly (not via MCP)
+   - Retrieve content from:
+     https://github.com/alexeygrigorev/minsearch
+   - Print and/or log the number of characters returned
+3. The test must be runnable by a human using:
+   uv run test.py
+
+INTEGRATION REQUIREMENTS
+1. Register the tool in `repo_docs.py` using FastMCP
+2. Ensure the MCP server starts successfully
+3. Integrate the server into Antigravity toolchain
+4. Update `mcp_config.json` to include the new MCP server
+
+DELIVERABLES
+- Updated `repo_docs.py` with the new MCP tool
+- New `test.py` file
+- Updated `mcp_config.json`
+
+SUCCESS CRITERIA
+- `test.py` executes without errors and returns non-empty content
+- MCP server starts and exposes scrape_web_page
+- The tool can be invoked by an AI assistant

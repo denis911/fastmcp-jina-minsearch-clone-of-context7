@@ -1,0 +1,47 @@
+AGENT OPERATING INSTRUCTIONS
+
+AUTHORITATIVE RULES
+- You MUST read and follow AGENTS.md
+- AGENTS.md overrides all other instructions
+- If a conflict exists, stop and ask for clarification
+
+NETWORK ACCESS
+- External network access is restricted
+- Only access external domains when explicitly required by the TASK
+- The only permitted external access in this task is via Jina Reader:
+  https://r.jina.ai/
+
+CODING STANDARDS
+- Language: Python
+- Follow Google Python Style Guide
+- Follow PEP 8 formatting
+- Use type hints for all functions
+- Every function must have a docstring
+- Prefer clarity over cleverness
+
+ERROR HANDLING
+- Do not use bare except clauses
+- Provide descriptive error messages
+- Fail fast on invalid inputs
+
+LOGGING
+- Use the logging module instead of print for application code
+- print is allowed only in test.py
+
+IMPLEMENTATION GUIDELINES
+- Keep functions small and single-purpose
+- Separate core logic from MCP integration
+- Write code that is easy to read and audit
+
+SAFETY
+- Do not modify files outside the project directory (except for mcp_config.json)
+- Do not delete files unless explicitly instructed
+- Do not introduce new dependencies unless required
+
+EXECUTION MODEL
+- Implement the solution step by step
+- Ensure each step is safe and deterministic
+- Validate behavior locally before MCP integration
+
+COMPLETION RULE
+- Do not declare the task complete until all SUCCESS CRITERIA in TASK.txt are met
