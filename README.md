@@ -35,7 +35,7 @@ A flexible script for local usage. It's ideal for:
 ### Setup
 Clone the repository and install dependencies:
 ```bash
-uv add minsearch pandas scikit-learn fastmcp requests
+uv sync
 ```
 
 ### Running the MCP Tool
@@ -52,7 +52,28 @@ uv run search.py
 
 ## 🤖 Usage with Antigravity
 
-When working with Antigravity, you can simply ask:
+Update your Antigravity config in the `mcp_config.json` file:
+```json
+{
+    "mcpServers":  {
+                       "repo_docs":  {
+                                         "args":  [
+                                                      "run",
+                                                      "-q",
+                                                      "--directory",
+                                                      "C:\\tmp\\fastmcp-jina-minsearch-clone-of-context7",
+                                                      "repo_docs.py"
+                                                  ],
+                                         "env":  {
+                                                     "PYTHONUNBUFFERED":  "1"
+                                                 },
+                                         "command":  "C:\\Users\\d_local\\.local\\bin\\uv.exe"
+                                     }
+                    }
+}
+```
+
+Later when working with Antigravity, you can simply ask:
 > "Search the FastMCP documentation for 'how to implement a tool' using the Repo Docs MCP."
 
 The agent will then:
